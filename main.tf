@@ -16,10 +16,19 @@ provider "aws" {
   }
 }
 
+
 # Create Bucket
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "s3bucket" {
   bucket = "testbucket"
   acl    = "public-read"
+}
+
+resource "aws_s3_bucket_public_access_block" "example" {
+  bucket = aws_s3_bucket.s3bucket.id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
 
 resource "aws_dynamodb_table" "dogs" {
