@@ -1,0 +1,1 @@
+https://onexlab-io.medium.com/localstack-s3-terraform-9b1554e2add8
