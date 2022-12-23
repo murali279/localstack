@@ -33,6 +33,11 @@ resource "aws_dynamodb_table" "dogs" {
   }
 }
 
+resource "aws_sqs_queue" "muralisqsqueue" {
+  name = "muralisqsqueue"
+
+}
+
 
 
 # Upload an object
