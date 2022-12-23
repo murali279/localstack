@@ -17,7 +17,7 @@ provider "aws" {
 
 # Create Bucket
 resource "aws_s3_bucket" "b" {
-  bucket = "onexlab-bucket-terraform"
+  bucket = "onexlab-bucket-terraform1"
   acl    = "public-read"
 }
 
