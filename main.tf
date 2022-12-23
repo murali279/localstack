@@ -12,6 +12,7 @@ provider "aws" {
     dynamodb = "http://localhost:4566"
     lambda   = "http://localhost:4566"
     kinesis  = "http://localhost:4566"
+    sqs      = "http://localhost:4566"
   }
 }
 
@@ -33,9 +34,10 @@ resource "aws_dynamodb_table" "dogs" {
   }
 }
 
-resource "aws_sqs_queue" "muralisqsqueue" {
-  name = "muralisqsqueue"
-
+resource "aws_sqs_queue" "terraform_queue" {
+  name                        = "murali-example-queue.fifo"
+  fifo_queue                  = true
+  content_based_deduplication = true
 }
 
 
