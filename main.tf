@@ -1,14 +1,14 @@
 # Public Cloud Configuration
 provider "aws" {
-  region                      = "${AWS_REGION}"
-  access_key                  = "${AWS_ACCESS_KEY}"
-  secret_key                  = "${AWS_SECRET_KEY}"
+  region                      = "%AWS_REGION%"
+  access_key                  = "%AWS_ACCESS_KEY%"
+  secret_key                  = "%AWS_SECRET_KEY%"
   skip_credentials_validation = true
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
   s3_force_path_style         = true
   endpoints {
-    s3 = "${aws_endpoint}"
+    s3 = "%aws_endpoint%"
   }
 }
 
