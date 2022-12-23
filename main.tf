@@ -53,7 +53,7 @@ resource "aws_sqs_queue" "terraform_queue" {
 
 # Upload an object
 resource "aws_s3_bucket_object" "object" {
-  bucket = aws_s3_bucket.b.id
+  bucket = aws_s3_bucket.s3bucket.id
   key    = "test.txt"
   acl    = "public-read"
   source = "ReadMe.txt"
