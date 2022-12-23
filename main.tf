@@ -8,7 +8,7 @@ provider "aws" {
   skip_metadata_api_check     = true
   s3_force_path_style         = true
   endpoints {
-    s3 = "http://localhost:4566"
+    s3       = "http://localhost:4566"
     dynamodb = "http://localhost:4566"
     lambda   = "http://localhost:4566"
     kinesis  = "http://localhost:4566"
@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "s3bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.s3bucket.id
+  bucket              = aws_s3_bucket.s3bucket.id
   block_public_acls   = true
   block_public_policy = true
 }
