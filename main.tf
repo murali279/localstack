@@ -25,10 +25,8 @@ resource "aws_s3_bucket" "s3bucket" {
 
 resource "aws_s3_bucket_public_access_block" "example" {
   bucket = aws_s3_bucket.s3bucket.id
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  block_public_acls   = true
+  block_public_policy = true
 }
 
 resource "aws_dynamodb_table" "dogs" {
