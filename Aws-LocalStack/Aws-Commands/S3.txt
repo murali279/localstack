@@ -1,0 +1,28 @@
+ aws --endpoint-url=http://localhost:4566 s3api help
+ 
+ 
+ $ aws --endpoint-url=http://localhost:4566 s3api create-bucket --bucket test-bucket-989282 --region us-east-1
+{
+    "Location": "/test-bucket-989282"
+}
+
+
+
+$ aws --endpoint-url=http://localhost:4566 s3api list-buckets
+{
+    "Buckets": [
+        {
+            "Name": "test-bucket-989282",
+            "CreationDate": "2022-12-22T17:59:34+00:00"
+        }
+    ],
+    "Owner": {
+        "DisplayName": "webfile",
+        "ID": "bcaf1ffd86f41161ca5fb16fd081034f"
+    }
+}
+
+$ aws --endpoint-url=http://localhost:4566 s3 ls s3://testbucket --recursive
+2022-12-23 20:05:43       1441 Document/hello.txt
+2022-12-23 20:07:12       1441 Document/hello1.txt
+2022-12-23 19:35:01         66 test.txt

@@ -1,0 +1,30 @@
+OfficeWork@DESKTOP-SLU6JHH MINGW64 /D/Softwares/AwsLocalStack
+$ aws --endpoint-url=http://localhost:4566 sqs create-queue --queue-name hello-world
+{
+    "QueueUrl": "http://localhost:4566/000000000000/hello-world"
+}
+
+OfficeWork@DESKTOP-SLU6JHH MINGW64 /D/Softwares/AwsLocalStack
+$ aws --endpoint-url=http://localhost:4566 sqs send-message --queue-url http://localhost:4566/queue/hello-world --message-body "My first Message"
+{
+    "MD5OfMessageBody": "f34fac8f20963dabd7a76a2f0ea7b3bc",
+    "MessageId": "3600b779-2756-419b-b2ea-d13a83343acd"
+}
+
+OfficeWork@DESKTOP-SLU6JHH MINGW64 /D/Softwares/AwsLocalStack
+$ aws --endpoint-url=http://localhost:4566 sqs receive-message --queue-url http://localhost:4566/queue/hello-world --max-number-of-messages 10
+{
+    "Messages": [
+        {
+            "MessageId": "3600b779-2756-419b-b2ea-d13a83343acd",
+            "ReceiptHandle": "MGM4YjQyZDEtZWUyNy00MjliLTg2NWEtMjNhNzgzNTE5MDA1IGFybjphd3M6c3FzOnNhLWVhc3QtMTowMDAwMDAwMDAwMDA6aGVsbG8td29ybGQgMzYwMGI3NzktMjc1Ni00MTliLWIyZWEtZDEzYTgzMzQzYWNkIDE2NzE3MTg0NDQuMzQxNTk4Mw==",
+            "MD5OfBody": "f34fac8f20963dabd7a76a2f0ea7b3bc",
+            "Body": "My first Message"
+        }
+    ]
+	
+aws --endpoint-url=http://localhost:4566 sqs receive-message --queue-url http://localhost:4566/000000000000/murali-example-queue.fifo --max-number-of-messages 10
+	
+	
+	
+ aws --endpoint-url=http://localhost:4566 sqs  list-queues	

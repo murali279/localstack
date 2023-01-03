@@ -1,0 +1,7 @@
+OfficeWork@DESKTOP-SLU6JHH MINGW64 /d/MuraliCode/git/Terraform/LocalAws/localstack (many-resources)
+$ aws --endpoint-url=http://localhost:4566 dynamodb list-tables
+{
+    "TableNames": [
+        "dogs"
+    ]
+}
